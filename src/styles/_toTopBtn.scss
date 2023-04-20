@@ -1,0 +1,16 @@
+.toTopBtn {
+  position: fixed;
+  bottom: 2%;
+  right: 2%;
+
+  svg {
+    background-color: $color_softBLue-transparent;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 40px;
+    margin: auto;
+    color: $color_light;
+    cursor: pointer;
+  }
+}

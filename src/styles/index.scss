@@ -1,0 +1,76 @@
+@import "./variables";
+@import "./header";
+@import "./categoriesCarousel";
+@import "./title";
+@import "./carousel";
+@import "./TrendsList";
+@import "./itemCard";
+@import "./favList";
+@import "./movie";
+@import "./categoryPage";
+@import "./loadMoreItems";
+@import "./trendsPage";
+@import "./toTopBtn";
+@import "./loaderPage";
+@import "./footer";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+  font-family: "Noto Sans", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $color_light;
+  position: relative;
+
+  .result {
+    &-container {
+      position: absolute;
+      inset: 60px 0 0 auto;
+      z-index: 10;
+      background-color: inherit;
+      max-height: 100%;
+      width: 100%;
+      background-color: $color_dark;
+      overflow-y: auto;
+      height: fit-content;
+
+      @include respond-to-desktop() {
+        max-width: 500px;
+      }
+    }
+
+    &-item {
+      color: $color_light;
+      display: flex;
+      margin: 20px;
+      gap: 10px;
+
+      &:hover {
+        background-color: $color_gray;
+        cursor: pointer;
+      }
+
+      img {
+        width: 150px;
+        aspect-ratio: 200/113;
+        height: fit-content;
+      }
+    }
+
+    &-title {
+      font-size: 1.125rem;
+    }
+
+    &-date {
+      opacity: 0.7;
+      font-size: 0.9375rem;
+    }
+  }
+}

@@ -1,0 +1,236 @@
+.movie {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  width: 100%;
+  max-width: 100vw;
+  overflow: hidden;
+
+  @include respond-to-desktop() {
+    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .header-movie {
+    position: relative;
+    border-top: #666 1px solid;
+    border-bottom: #666 1px solid;
+    padding-block: 10px;
+
+    @include respond-to-desktop() {
+      grid-column: 1 / 3;
+    }
+
+    .title {
+      font-size: 1.5625rem;
+      text-align: center;
+      font-weight: bold;
+      max-width: 70%;
+      margin: auto;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    aspect-ratio: 2/3;
+    margin: auto;
+    max-width: 500px;
+
+    @include respond-to-desktop() {
+      max-width: 400px;
+      border-radius: 10px;
+      grid-column: 1 /2;
+      grid-row: 2 /3;
+    }
+  }
+
+  &__content {
+    display: flex;
+    max-width: 500px;
+    flex-direction: column;
+    margin: auto;
+    gap: 10px;
+    font-size: 1rem;
+    margin-block: 30px;
+    padding: 0 5vw;
+
+    @include respond-to-desktop() {
+      padding: 0;
+
+      & .tagline {
+        border-top: none;
+      }
+    }
+
+    .data {
+      display: flex;
+      justify-content: space-around;
+
+      p {
+        display: flex;
+        align-items: baseline;
+
+        .star-icon {
+          color: $color_softBLue;
+        }
+      }
+    }
+
+    .tagline,
+    .overview {
+      padding: 10px;
+      text-align: center;
+      line-height: 1.8;
+    }
+
+    .categories-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 5px;
+
+      .category-item {
+        font-size: 1.125rem;
+        border-radius: 10px;
+        border: $color_gray 1px solid;
+        padding: 5px 10px;
+        max-width: max-content;
+        color: $color_dark;
+        text-decoration: none;
+
+        &:hover {
+          background-color: $color_gray;
+          color: $color_light;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .favBtn-container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+
+      .btnIsFav {
+        background-color: $color_gray;
+        color: $color_light;
+
+        .iconInFav {
+          color: $color_softBLue;
+        }
+      }
+
+      .btnNotFav {
+        background-color: $color_softBLue;
+
+        .favMovieIcon {
+          color: $color_violet;
+        }
+      }
+
+      .btnFav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        padding: 10px;
+        border-radius: 20px;
+        font-weight: bold;
+        border: none;
+        width: 100%;
+        max-width: 500px;
+        font-size: 1.125rem;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__video-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+
+    @include respond-to-desktop() {
+      grid-column: 1 /3;
+      grid-row: 3 /4;
+    }
+
+    .video {
+      width: 100%;
+      max-width: 500px;
+      height: 282px;
+      border: none;
+    }
+  }
+
+  &__images-contanier {
+    overflow: hidden;
+
+    .swiper {
+      &-slide {
+        max-width: 200px;
+      }
+    }
+
+    @include respond-to-desktop() {
+      grid-column: 1/ 3;
+    }
+  }
+
+  &__carousel-container {
+    width: 100%;
+    overflow-x: auto;
+
+    @include respond-to-desktop() {
+      grid-column: 1 /3;
+    }
+  }
+
+  &__reviews {
+    &-section {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      @include respond-to-desktop() {
+        grid-column: 1 /3;
+        grid-row: 5 /6;
+      }
+
+      &__title {
+        margin-left: 20px;
+        border-bottom: 2px solid $color_blue;
+        width: -moz-fit-content;
+        width: fit-content;
+      }
+    }
+
+    &-card {
+      margin-left: 25px;
+      max-width: 500px;
+      background-color: $color_gray;
+      padding: 10px;
+      border-radius: 15px;
+    }
+
+    &-username {
+      font-size: 1.25rem;
+      font-weight: bold;
+      width: fit-content;
+
+      img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50px;
+        margin-right: 10px;
+      }
+    }
+
+    &-content {
+      padding: 0 5px;
+      margin: 0;
+      font-size: 0.8125rem;
+    }
+  }
+}
