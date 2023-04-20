@@ -20,7 +20,16 @@ export default function Item() {
     (store: AppStore) => store.movies.recommendationsMovies.list
   );
   const movieVideo = useSelector((store: AppStore) => store.movies.movie.video);
-  const { id, title, tagline, overview, genres, poster_path, vote_average, release_date } = movie;
+  const {
+    id,
+    title,
+    tagline,
+    overview,
+    genres,
+    poster_path,
+    vote_average,
+    release_date
+  } = movie;
   const dispatch = useDispatch();
   const addFavoriteMovie = (movie: CardMovie | Movie) => {
     dispatch(addFavorite(movie));
@@ -88,8 +97,9 @@ export default function Item() {
         </div>
       </div>
       <div className="movie__images-contanier">
-        <Swiper spaceBetween={10}>
-          {images.map((image, index) => (
+        <Swiper spaceBetween={10}
+        >
+          {images.map((image, index )=> (
             <SwiperSlide key={`imagesList-${index}`}>
               <img src={`https://image.tmdb.org/t/p/w200${image.file_path}`} alt="" />
             </SwiperSlide>
