@@ -5,7 +5,7 @@ export const initialList: Array<CardMovie> = [];
 export const FavoritesSlice = createSlice({
   name: "favorites",
   initialState: {
-    favList: JSON.parse(localStorage.favorites) ?? initialList
+    favList: localStorage.favorites ? JSON.parse(localStorage.favorites) : initialList
   },
   reducers: {
     updateFavoriteList: (state, action) => {
@@ -24,10 +24,10 @@ export default FavoritesSlice.reducer;
 
 export const addFavorite =
   (movie: CardMovie | Movie): any =>
-  (dispatch: Dispatch<AnyAction>) =>
-    dispatch(updateFavoriteList(movie));
+    (dispatch: Dispatch<AnyAction>) =>
+      dispatch(updateFavoriteList(movie));
 
 export const deleteFavorite =
   (movie: CardMovie | Movie): any =>
-  (dispatch: Dispatch<AnyAction>) =>
-    dispatch(removeFavoriteList(movie));
+    (dispatch: Dispatch<AnyAction>) =>
+      dispatch(removeFavoriteList(movie));
