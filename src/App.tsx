@@ -3,12 +3,12 @@ import Layout from "./utils/Layout";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 type Props = {};
 import LoaderPage from "./pages/LoaderPage";
-import NotFound from "./pages/NotFound";
 export default function App({}: Props) {
   const Home = lazy(() => import("./pages/HomePage"));
   const MoviePage = lazy(() => import("./pages/MoviePage"));
   const CategoryPage = lazy(() => import("./pages/CategoryPage"));
   const TrendsPage = lazy(() => import("./pages/TrendsPage"));
+  const NotFound = lazy(() => import("./pages/NotFound"));
   const Item = lazy(() => import("./components/Item"));
   return (
     <Suspense fallback={<LoaderPage />}>

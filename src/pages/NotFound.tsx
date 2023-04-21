@@ -1,9 +1,6 @@
-import React from "react";
 import { BsXCircle } from "react-icons/bs";
 
-type Props = {};
-
-export default function NotFound({}: Props) {
+export default function NotFound() {
   return (
     <main className="notFound">
       <section>
