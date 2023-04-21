@@ -23,7 +23,7 @@ export default function App({}: Props) {
               <Route path=":slug" element={<Item />} />
             </Route>
             <Route path="/tendencias" element={<TrendsPage />} />
-            <Route path="*" element={<NotFound />} />
+            <Route path="/*" element={<NotFound />} />
           </Routes>
         </Layout>
       </BrowserRouter>
