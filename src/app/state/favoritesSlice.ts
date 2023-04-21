@@ -24,10 +24,10 @@ export default FavoritesSlice.reducer;
 
 export const addFavorite =
   (movie: CardMovie | Movie): any =>
-    (dispatch: Dispatch<AnyAction>) =>
-      dispatch(updateFavoriteList(movie));
+  (dispatch: Dispatch<AnyAction>) =>
+    dispatch(updateFavoriteList(movie));
 
 export const deleteFavorite =
   (movie: CardMovie | Movie): any =>
-    (dispatch: Dispatch<AnyAction>) =>
-      dispatch(removeFavoriteList(movie));
+  (dispatch: Dispatch<AnyAction>) =>
+    dispatch(removeFavoriteList(movie));

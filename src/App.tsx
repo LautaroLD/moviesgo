@@ -3,6 +3,7 @@ import Layout from "./utils/Layout";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 type Props = {};
 import LoaderPage from "./pages/LoaderPage";
+import NotFound from "./pages/NotFound";
 export default function App({}: Props) {
   const Home = lazy(() => import("./pages/HomePage"));
   const MoviePage = lazy(() => import("./pages/MoviePage"));
@@ -22,7 +23,7 @@ export default function App({}: Props) {
               <Route path=":slug" element={<Item />} />
             </Route>
             <Route path="/tendencias" element={<TrendsPage />} />
-            <Route path="*" />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
       </BrowserRouter>
