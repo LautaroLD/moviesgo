@@ -41,7 +41,7 @@ export default function Item() {
         alt={title}
       />
       <div className="movie__content">
-        {movieVideo.length > 0 && (
+        {movieVideo?.length > 0 && (
           <div className="movie__video-container">
             <TitleComponent text="Trailer" />
             <iframe
@@ -96,13 +96,13 @@ export default function Item() {
           ))}
         </Swiper>
       </div>
-      {similarMovies.length > 0 && (
+      {similarMovies?.length > 0 && (
         <div className="movie__carousel-container">
           <TitleComponent text="Similares" />
           <Carousel movies={similarMovies} />
         </div>
       )}
-      {recommendationsMovies.length > 0 && (
+      {recommendationsMovies?.length > 0 && (
         <div className="movie__carousel-container">
           <TitleComponent text="Recomendaciones" />
           <Carousel movies={recommendationsMovies} />

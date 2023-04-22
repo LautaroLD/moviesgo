@@ -24,7 +24,12 @@ export const getRequestVideoMovie = async (endpoint: string) => {
 };
 export const getRequest = async (endpoint: string) => {
   try {
-    const { data } = await axios.get(URL + endpoint + "?" + TOKEN + "&language=es-Es&region=ar");
+    const { data } = await axios.get(URL + endpoint + "?" + TOKEN + "&language=es-Es&region=ar", {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      }
+    });
 
     return data;
   } catch (error) {
@@ -40,7 +45,12 @@ export const getRequest = async (endpoint: string) => {
 };
 export const getImages = async (endpoint: string) => {
   try {
-    const { data } = await axios.get(URL + endpoint + "?" + TOKEN);
+    const { data } = await axios.get(URL + endpoint + "?" + TOKEN, {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      }
+    });
     return data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
@@ -55,7 +65,12 @@ export const getImages = async (endpoint: string) => {
 };
 export const getMoviesWithParams = async (endpoint: string) => {
   try {
-    const { data } = await axios.get(URL + endpoint + "&" + TOKEN + "&language=es-Es&region=ar");
+    const { data } = await axios.get(URL + endpoint + "&" + TOKEN + "&language=es-Es&region=ar", {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      }
+    });
 
     return data;
   } catch (error) {
