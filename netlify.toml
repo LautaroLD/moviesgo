@@ -1,5 +1,0 @@
-[[redirects]]
-  from = "http://api.themoviedb.org/*"
-  to = "https://api.themoviedb.org/*"
-  status = 301
-  force = true

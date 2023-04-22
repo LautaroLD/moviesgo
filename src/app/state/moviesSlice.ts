@@ -144,7 +144,7 @@ export const getMovieByCategory =
   async (dispatch: Dispatch<AnyAction>) => {
     try {
       const { results } = await getMoviesWithParams(
-        `discover/movie/?with_genres=${id}&page=${page}`
+        `discover/movie?with_genres=${id}&page=${page}`
       );
       dispatch(setMoviesByCategory(results));
     } catch (error) {
