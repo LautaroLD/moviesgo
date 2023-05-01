@@ -14,7 +14,7 @@ export default function UpcomingList() {
   }, []);
   return (
     <section>
-      <TitleComponent text="Proximamente" />
+      <TitleComponent text="Próximamente" />
       <Carousel movies={upcomingList} />
     </section>
   );

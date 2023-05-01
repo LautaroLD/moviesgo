@@ -88,7 +88,7 @@ export default function Item() {
         </div>
       </div>
       <div className="movie__images-contanier">
-        <Swiper spaceBetween={10}>
+        <Swiper spaceBetween={10} slidesPerView={"auto"}>
           {images.map((image, index) => (
             <SwiperSlide key={`imagesList-${index}`}>
               <img src={`https://image.tmdb.org/t/p/w200${image.file_path}`} alt="" />

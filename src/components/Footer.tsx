@@ -1,18 +1,22 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { AppStore } from "../app/store";
 import TitleComponent from "./TitleComponent";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { getCategories } from "../app/state/categoriesSlice";
 
-type Props = {};
-
-export default function Footer({}: Props) {
+export default function Footer() {
   const categories = useSelector((store: AppStore) => store.categories.list);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getCategories());
+  }, []);
   return (
     <footer className="footer">
       <section className="categories-section">
-        <TitleComponent text="Categorias" />
+        <TitleComponent text="Categorías" />
         <div className="categories-list">
-          {categories.map((category, index) => (
+          {categories?.map((category, index) => (
             <Link
               key={`footer-category-${index}`}
               to={`./categoria/${category.name}-${category.id}`}

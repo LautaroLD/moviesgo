@@ -27,7 +27,7 @@ export const getRequest = async (endpoint: string) => {
     const { data } = await axios.get(URL + endpoint + "?" + TOKEN + "&language=es-Es&region=ar", {
       headers: {
         "Content-Type": "application/json;charset=utf-8",
-        Accept: "application/json",
+        Accept: "application/json"
       }
     });
 
@@ -48,7 +48,7 @@ export const getImages = async (endpoint: string) => {
     const { data } = await axios.get(URL + endpoint + "?" + TOKEN, {
       headers: {
         "Content-Type": "application/json;charset=utf-8",
-        Accept: "application/json",
+        Accept: "application/json"
       }
     });
     return data;
@@ -68,7 +68,7 @@ export const getMoviesWithParams = async (endpoint: string) => {
     const { data } = await axios.get(URL + endpoint + "&" + TOKEN + "&language=es-Es&region=ar", {
       headers: {
         "Content-Type": "application/json;charset=utf-8",
-        Accept: "application/json",
+        Accept: "application/json"
       }
     });
 
